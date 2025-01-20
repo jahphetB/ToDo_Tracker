@@ -1,0 +1,175 @@
+/* General Body Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f4f4f9;
+}
+
+h1 {
+    text-align: center;
+    color: #444;
+}
+
+/* Layout Styles */
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.add-task {
+    flex: 2;
+    margin-right: 20px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.task-lists {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.incomplete-tasks, .completed-tasks {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Form and Input Styles */
+form {
+    margin-top: 10px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Task Actions */
+.task-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Adds spacing between buttons */
+    margin-top: 10px;
+    align-items: center;
+}
+
+/* General Button Styles */
+button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+/* Mark as Complete/Incomplete Button */
+button[type="submit"] {
+    background-color: #007bff;
+    color: white;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Delete Button */
+button.delete-button {
+    background-color: #dc3545;
+    color: white;
+}
+
+button.delete-button:hover {
+    background-color: #c82333;
+}
+
+/* Sort Buttons */
+button.sort-button {
+    background-color: #6c757d;
+    color: white;
+}
+
+button.sort-button:hover {
+    background-color: #5a6268;
+}
+
+/* Sort Actions */
+.sort-actions {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+button.sort-button {
+    background-color: #6c757d;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+button.sort-button:hover {
+    background-color: #5a6268;
+}
+
+
+/* Task List Styles */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    background-color: #f9f9f9;
+    margin-bottom: 15px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+li strong {
+    font-size: 16px;
+}
+
+/* Placeholder Text for Empty Lists */
+ul li {
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+    padding: 10px 0;
+    border: none; /* Removes the border for placeholder items */
+    background-color: transparent;
+    box-shadow: none;
+}
+
+/* Tag Filter Styles */
+.tag-filter ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 0;
+}
+
+.tag-filter li {
+    display: inline;
+}
+
+.tag-filter a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.tag-filter a:hover {
+    text-decoration: underline;
+}

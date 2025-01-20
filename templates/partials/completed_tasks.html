@@ -1,0 +1,45 @@
+<section id="completed-tasks">
+    <h2>Completed Tasks</h2>
+    <div class="sort-actions">
+        <button hx-get="/filter-date?sort_by=created_at&completed=true" 
+                hx-target="#task-lists" 
+                hx-swap="outerHTML" 
+                class="sort-button">
+            Sort by Creation Date
+        </button>
+        <button hx-get="/filter-date?sort_by=due_date&completed=true" 
+                hx-target="#task-lists" 
+                hx-swap="outerHTML" 
+                class="sort-button">
+            Sort by Due Date
+        </button>
+    </div>
+    <ul id="completed-list">
+        {% if completed_tasks|length == 0 %}
+        <li>No completed tasks available.</li>
+        {% else %}
+        {% for todo in completed_tasks %}
+        <li id="task-{{ todo.id }}">
+            <strong>{{ todo.title }}</strong> - {{ todo.body }}
+            <br>Created: {{ todo.created_at }}
+            <br>Due: {{ todo.due_date or 'No due date' }}
+            <br>Tags: {% for tag in todo.tags %}{{ tag.name }} {% endfor %}
+            <div class="task-actions">
+                <form method="post" action="/toggle/{{ todo.id }}" 
+                      hx-post="/toggle/{{ todo.id }}" 
+                      hx-target="#task-lists" 
+                      hx-swap="outerHTML">
+                    <button type="submit">Mark as Incomplete</button>
+                </form>
+                <form method="post" action="/delete/{{ todo.id }}" 
+                      hx-post="/delete/{{ todo.id }}" 
+                      hx-target="#task-{{ todo.id }}" 
+                      hx-swap="outerHTML">
+                    <button type="submit" class="delete-button">Delete</button>
+                </form>
+            </div>
+        </li>
+        {% endfor %}
+        {% endif %}
+    </ul>
+</section>
