@@ -95,22 +95,6 @@ button.delete-button:hover {
 button.sort-button {
     background-color: #6c757d;
     color: white;
-}
-
-button.sort-button:hover {
-    background-color: #5a6268;
-}
-
-/* Sort Actions */
-.sort-actions {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 15px;
-}
-
-button.sort-button {
-    background-color: #6c757d;
-    color: white;
     padding: 8px 12px;
     border: none;
     border-radius: 5px;
@@ -121,7 +105,6 @@ button.sort-button {
 button.sort-button:hover {
     background-color: #5a6268;
 }
-
 
 /* Task List Styles */
 ul {
@@ -154,22 +137,29 @@ ul li {
 }
 
 /* Tag Filter Styles */
-.tag-filter ul {
+.tag-list {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
     padding: 0;
+    margin-bottom: 20px;
+    list-style: none;
 }
 
-.tag-filter li {
-    display: inline;
+.tag-list li {
+    margin: 0;
 }
 
-.tag-filter a {
-    text-decoration: none;
-    color: #007bff;
+button.filter-tag {
+    background-color: #6c757d;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
 }
 
-.tag-filter a:hover {
-    text-decoration: underline;
+button.filter-tag:hover {
+    background-color: #5a6268;
 }
